@@ -56,6 +56,19 @@ const requisito11 = () => {
     });
 }
 
+const requisito12 = () => {
+    const ol = document.getElementById('lista-tarefas');
+    const saveButton = document.getElementById('salvar-tarefas');
+    saveButton.addEventListener('click', () => {
+        localStorage.setItem('lista', ol.innerHTML);
+    });
+    if (localStorage.getItem('lista') !== null) {
+        ol.innerHTML = localStorage.getItem('lista');
+    }
+};
+
+
+
 
 const requisito14 = () => {
     const buttonErase = document.getElementById("remover-selecionado");
@@ -84,5 +97,6 @@ window.onload = () => {
     requisito7();
     requisito10();
     requisito11();
+    requisito12();
     requisito14();
 }
